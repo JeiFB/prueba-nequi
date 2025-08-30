@@ -1,0 +1,15 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://${URL}:${PORT}/${DB_NAME}?${URL_VALUES}
+    username: ${USER_DB_USERNAME}
+    password: ${USER_DB_PASSWORD}
+    pool:
+      enabled: true
+      initial-size: 5
+      max-size: 20
+      max-idle-time: 30m
+      max-create-connection-time: 10s
+      validation-query: SELECT 1
+
+server:
+  port: 8090
